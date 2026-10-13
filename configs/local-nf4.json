@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "dataset_revision": "3622039cf51f7eeffa58b957332a8e8c337981d7",
+  "split_seed": 42,
+  "development_size": 100,
+  "pilot_size": 50,
+  "smoke_size": 10,
+  "languages": [
+    "en",
+    "bn",
+    "te"
+  ],
+  "budgets": [
+    0,
+    2,
+    4,
+    8,
+    16
+  ],
+  "models": {
+    "qwen3-1.7b": {
+      "name": "Qwen/Qwen3-1.7B",
+      "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e"
+    },
+    "qwen3-4b": {
+      "name": "Qwen/Qwen3-4B",
+      "revision": "1cfa9a7208912126459214e8b04321603b3df60c"
+    }
+  },
+  "generation": {
+    "enable_thinking": false,
+    "do_sample": true,
+    "temperature": 0.7,
+    "top_p": 0.8,
+    "top_k": 20,
+    "max_new_tokens": 4096,
+    "seed": 42,
+    "dtype": "float16",
+    "quantization": "4bit"
+  },
+  "router": {
+    "max_depth": 3,
+    "min_samples_leaf": 10,
+    "folds": 5,
+    "seed": 42
+  },
+  "bootstrap": {
+    "samples": 2000,
+    "seed": 42
+  }
+}

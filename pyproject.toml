@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "indic-reasoning-study"
+version = "0.1.0"
+description = "Reproducible MGSM explanation-budget experiments and question-only routing"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+analysis = ["numpy==2.3.3", "matplotlib==3.10.7", "scikit-learn==1.7.2"]
+tokenizer = ["transformers==4.57.1", "jinja2==3.1.6"]
+gpu = ["torch>=2.6,<3", "transformers==4.57.1", "jinja2==3.1.6", "accelerate==1.11.0", "bitsandbytes==0.48.1"]
+
+[project.scripts]
+indic-study = "study.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["study*"]
